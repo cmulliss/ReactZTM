@@ -3,17 +3,25 @@ import './App.css'
 
 class App extends Component {
   state = {
-    name: 'Motley'
+    name: { firstName: 'Motley', lastName: 'Penguin' },
+    company: 'MP'
   }
   render() {
     return (
       <div className='App'>
         <header className='App-header'>
           <h1>App</h1>
-          <p>Hello {this.state.name}</p>
-          <button onClick={() => {
-            
-          }}>Change Name</button>
+          <p>
+            My name is {this.state.name.firstName} {this.state.name.lastName}, I work at {this.state.company}
+          </p>
+          <button
+            onClick={() => {
+              this.setState({ name: { firstName: 'Cherry', lastName: 'Mulliss' }, company: 'Home' })
+              console.log(this.state)
+            }}
+          >
+            Change Name
+          </button>
         </header>
       </div>
     )

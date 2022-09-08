@@ -32,3 +32,6 @@ root.render(
 
 - npm run build
 
+## setState
+
+- will perform a shallow merge
